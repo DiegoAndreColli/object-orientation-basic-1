@@ -4,7 +4,7 @@ package object.orientation.basic;
  *
  * @author User
  */
-public class start {
+public class Start {
 
     /**
      * @param args the command line arguments
