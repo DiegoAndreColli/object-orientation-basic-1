@@ -5,18 +5,36 @@ package object.orientation.basic;
  * @author User
  */
 class Pessoa {
-    /* Por favor ignore por enquanto as palavras "Double" e "String" nos atributos abaixo */
-    Double altura;
-    Double saldoBanco;
+
     String nome;
-    /* Por favor ignore por enquanto as palavras "void", "String" e "Double"  nos métodos abaixo */
+    Double altura;
+    private Double saldoBanco;
+
+    public Pessoa() {
+        saldoBanco = 0.0;
+    }
+
     String falar() {
         return "Estou falando";
     }
+
     void andar() {
         System.out.println("Estou andando.");
     }
-    void pagarConta(Double valorPagar) {
-        saldoBanco = saldoBanco - valorPagar;
+
+    void receberPagamento(Double pagamento) {
+        this.saldoBanco = this.saldoBanco + pagamento;
+    }
+
+    public void pagarConta(Double valorPagar) {
+        if (saldoBanco >= valorPagar) {
+            saldoBanco = saldoBanco - valorPagar;
+        } else {
+            System.out.println("Saldo insuficiente para pagar a conta.");
+        }
+    }
+
+    public void mostraSaldoBanco() {
+        System.out.println("Saldo em banco: " + saldoBanco);
     }
 }

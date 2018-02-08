@@ -10,19 +10,23 @@ public class Start {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+
         Pessoa pessoa = new Pessoa();
-        pessoa.altura = 1.80;
-        pessoa.saldoBanco = 1500.5;
         pessoa.nome = "Diego Colli";
-        System.out.println(pessoa.falar());
+        pessoa.altura = 1.80;
         pessoa.andar();
+        // Recebe um pagamento
+        pessoa.receberPagamento(10100.00);
+        System.out.println(pessoa.falar());
+        // Cria uma conta
+        Double conta = 10000.00;
         System.out.println("Saldo antes de pagar conta:");
-        System.out.println(pessoa.saldoBanco);
-        pessoa.pagarConta(1500.0);
+        pessoa.mostraSaldoBanco();
+        // "Tenta pagar a conta"
+        pessoa.pagarConta(conta);
         System.out.println("Saldo após pagar conta:");
-        System.out.println(pessoa.saldoBanco);
-        
+        pessoa.mostraSaldoBanco();
+
     }
-    
+
 }
